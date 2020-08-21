@@ -18,9 +18,13 @@ Deploying Node.js Hello-World Applications with Ansible.
 
 ### To Add hosts to the Inventory file
 
-```aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --filters "Name=tag:Project,Values=demoinstances" --output text >> inventory```
+```
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --filters "Name=tag:Project,Values=demoinstances" --output text >> inventory
+```
 
 ### Run Ansible
 
-```ansible-playbook main-remote.yml -i inventory --private-key PATH_TO_KEY/remoteinstances.pem```
+```
+ansible-playbook main-remote.yml -i inventory --private-key PATH_TO_KEY/remoteinstances.pem
+``` 
 
